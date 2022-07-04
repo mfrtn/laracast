@@ -11,11 +11,7 @@
 </head>
 <body>
     <article>
-        <h1><a href="/post">My First Post</a></h1>
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. 
-        </p>
+        <?= $post; ?>
     </article>
 
     <a href="/">Go Back</a>
