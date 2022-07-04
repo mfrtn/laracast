@@ -7,11 +7,11 @@
 
     <link rel="stylesheet" href="/app.css">
 
-    <title>Document</title>
+    <title>My Blog</title>
 </head>
 <body>
     <article>
-        <h1><a href="/post">My First Post</a></h1>
+        <h1><a href="/posts/my-first-post">My First Post</a></h1>
 
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi.
@@ -19,7 +19,7 @@
     </article>
 
     <article>
-        <h1><a href="/post">My Second Post</a></h1>
+        <h1><a href="/posts/my-second-post">My Second Post</a></h1>
 
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. 
@@ -27,7 +27,7 @@
     </article>
 
     <article>
-        <h1><a href="/post">My Third Post</a></h1>
+        <h1><a href="/posts/my-third-post">My Third Post</a></h1>
 
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus fugit distinctio tempore ad perspiciatis laborum nihil velit, beatae obcaecati possimus facilis, culpa quibusdam consequuntur incidunt veritatis totam, cumque sequi. 

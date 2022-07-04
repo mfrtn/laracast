@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="/app.css">
 
-    <title>Document</title>
+    <title>My Blog</title>
 </head>
 <body>
     <article>
