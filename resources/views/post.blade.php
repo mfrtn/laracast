@@ -12,12 +12,12 @@
 <body>
     <article>
         <h1>
-            <a href="/posts/<?= $post->slug; ?>">
-                <?=  $post->title; ?>
+            <a href="/posts/{{ $post->slug }}">
+                {{ $post->title }}
             </a>
         </h1>
         <div>
-            <?=  $post->body; ?>
+            {!! $post->body !!}
         </div>
     </article>
 
