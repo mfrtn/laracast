@@ -45,14 +45,17 @@ class Post
     
     public static function find($slug)
     {
-        // if (!file_exists($path = resource_path("posts/{$slug}.html"))) {
-        //     //abort(404);
-        //    throw new ModelNotFoundException();
-        // }
+        return  static::all()->firstWhere('slug', $slug);
+    }
 
-        // return cache()->remember("posts.{$slug}", 0, fn() => file_get_contents($path));
-        
-        // of all the blog post, find the one with a slug that matches the one that was requested
-        return static::all()->firstWhere('slug', $slug);
+    public static function findOrFail($slug)
+    {
+        $post = static::find($slug);
+
+        if (! $post) {
+            throw new ModelNotFoundException();
+        }
+
+        return $post;
     }
 }

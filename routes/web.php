@@ -16,36 +16,6 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/', function () {
-    //$files = File::files(resource_path("posts")); 
-
-    // First Way
-    // $posts = collect($files)->map(function ($file) {
-    //     $documnet = YamlFrontMatter::parseFile($file);
-    //     return new Post(
-    //         $documnet->title,
-    //         $documnet->excerpt,
-    //         $documnet->date,
-    //         $documnet->body(),
-    //         $documnet->slug
-    //     );
-    // });
-
-    //Second Way , same as first way
-    // $posts = array_map(function ($file) {
-    //     $documnet = YamlFrontMatter::parseFile($file);
-    //     return new Post(
-    //         $documnet->title,
-    //         $documnet->excerpt,
-    //         $documnet->date,
-    //         $documnet->body(),
-    //         $documnet->slug
-    //     );
-    // }, $files);
-
-    // return view('posts', [
-    //     'posts' =>  $posts
-    // ]);
-
     return view('posts', [
         'posts' =>  Post::all()
     ]);
@@ -54,6 +24,6 @@ Route::get('/', function () {
 Route::get('posts/{post}', function ($slug) {
     // Find a post by its slug and pass it to a view called "post"
     return view('post', [
-        'post' =>  Post::find($slug)
+        'post' =>  Post::findOrFail($slug)
     ]);  
-})->where('post', '[A-z_\-]+');
+});
