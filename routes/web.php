@@ -2,7 +2,6 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +20,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('posts/{post}', function ($slug) {
+Route::get('posts/{post}', function ($id) {
     // Find a post by its slug and pass it to a view called "post"
     return view('post', [
-        'post' =>  Post::findOrFail($slug)
+        'post' =>  Post::findOrFail($id)
     ]);  
 });
