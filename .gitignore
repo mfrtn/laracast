@@ -36,6 +36,3 @@ storage/*.key
 /public/*.js
 /public/*.js.map
 /public/images
-
-composer.lock
-composer.json
