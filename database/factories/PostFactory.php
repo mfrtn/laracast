@@ -20,8 +20,8 @@ class PostFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'excerpt' => fake()->sentence(),
-            'body' => fake()->paragraph(),
+            'excerpt' => '<p>' . implode ('</p><p>', fake()->paragraphs(2)) . '</p>',
+            'body' => '<p>' . implode ('</p><p>', fake()->paragraphs(6)) . '</p>',
 
             'slug' => fake()->slug(),
 
