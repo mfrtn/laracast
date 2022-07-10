@@ -26,9 +26,11 @@ class RegisterController extends Controller
             'remember_token' => Str::random(10),
         ]);
 
-        User::create($attributes);
+        $user = User::create($attributes);
 
-        // session()->flash('success', 'Your account has been created.');
+        // log the user in
+
+        auth()->login($user);
 
         return redirect('/')->with('success', 'Your account has been created.');
     }   
