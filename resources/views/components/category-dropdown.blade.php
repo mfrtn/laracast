@@ -9,23 +9,13 @@
         </button>
     </x-slot>
 
-
     {{-- <x-dropdown-item href="/" :active="request()->routeIs('home')">All</x-dropdown-item> --}}
     <x-dropdown-item href="/" :active='(request()->category == null )'>All</x-dropdown-item>
-    {{-- @dd(request()->category) --}}
+
     @foreach ($categories as $category)
-    {{-- {{  ? 'bg-blue-500 text-white' : '' }}" --}}
-
         <x-dropdown-item
-            href="/?category={{ $category->slug }}"
-            {{-- href="/categories/{{ $category->slug }}" --}}
-
-            {{-- First way --}}
-            {{-- :active="isset($currentCategory) && $currentCategory->is($category)" --}}
-            {{-- Second way --}}
-            {{-- :active='request()->is("?category={$category->slug}")' --}}
-            :active='(request()->category == $category->slug)'
-            
+            href="/?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}"
+            :active='(request()->category == $category->slug)'            
         >{{ ucwords($category->name) }}
         </x-dropdown-item>
     @endforeach
