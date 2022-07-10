@@ -18,17 +18,22 @@
                 </x-slot>
 
 
-                <x-dropdown-item href="/" :active="request()->routeIs('home')">All</x-dropdown-item>
-
+                {{-- <x-dropdown-item href="/" :active="request()->routeIs('home')">All</x-dropdown-item> --}}
+                <x-dropdown-item href="/" :active='(request()->category == null )'>All</x-dropdown-item>
+                {{-- @dd(request()->category) --}}
                 @foreach ($categories as $category)
                 {{-- {{  ? 'bg-blue-500 text-white' : '' }}" --}}
 
                     <x-dropdown-item
-                        href="/categories/{{ $category->slug }}"
+                        href="/?category={{ $category->slug }}"
+                        {{-- href="/categories/{{ $category->slug }}" --}}
+
                         {{-- First way --}}
                         {{-- :active="isset($currentCategory) && $currentCategory->is($category)" --}}
                         {{-- Second way --}}
-                        :active='request()->is("categories/{$category->slug}")'
+                        {{-- :active='request()->is("?category={$category->slug}")' --}}
+                        :active='(request()->category == $category->slug)'
+                        
                     >{{ ucwords($category->name) }}
                     </x-dropdown-item>
                 @endforeach
@@ -59,7 +64,7 @@
 
         <!-- Search -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
-            <form method="GET" action="#">
+            <form method="GET" action="">
                 <input type="text" 
                     name="search"
                     placeholder="Find something"
