@@ -23,7 +23,6 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users,email',
             // 'password' => 'required|min:8|max:255'
             'password' => ['required', 'min:8', 'max:255'],
-            'remember_token' => Str::random(10),
         ]);
 
         $user = User::create($attributes);
