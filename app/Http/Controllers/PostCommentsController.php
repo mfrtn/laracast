@@ -20,5 +20,4 @@ class PostCommentsController extends Controller
 
         return back();
     }
-
 }
