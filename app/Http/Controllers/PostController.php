@@ -22,4 +22,6 @@ class PostController extends Controller
             'post' =>  $post
         ]);
     }
+
+    // index, show, store, edit, update, destroy // 7 RESTFULL ACTIPN
 }
