@@ -18,3 +18,23 @@ Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+Route::get('ping', function () {
+    $mailchimp = new \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => 'us8'
+    ]);
+
+    //$response = $mailchimp->ping->get();
+    $response = $mailchimp->lists->getListMembersInfo('894792665e');
+
+    // $response = $mailchimp->lists->addListMember('894792665e', [
+    //     'email_address' => 'hicaca4816@satedly.com',
+    //     'status' => 'subscribed'
+    // ]);
+
+    dd($response);
+    //print_r($response);
+});
