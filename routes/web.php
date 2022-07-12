@@ -19,7 +19,8 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
 
-Route::get('ping', function () {
+Route::post('newsletter', function () {
+    request()->validate(['email' => 'required|email']);
     $mailchimp = new \MailchimpMarketing\ApiClient();
 
     $mailchimp->setConfig([
@@ -27,14 +28,16 @@ Route::get('ping', function () {
         'server' => 'us8'
     ]);
 
-    //$response = $mailchimp->ping->get();
-    $response = $mailchimp->lists->getListMembersInfo('894792665e');
+    try {
+        $response = $mailchimp->lists->addListMember('894792665e', [
+            'email_address' => request('email'),
+            'status' => 'subscribed'
+        ]);
+    } catch (\Exception $e) {
+        throw \Illuminate\Validation\ValidationException::withMessages([
+            'email' => 'email not accepted'
+        ]);
+    }
 
-    // $response = $mailchimp->lists->addListMember('894792665e', [
-    //     'email_address' => 'hicaca4816@satedly.com',
-    //     'status' => 'subscribed'
-    // ]);
-
-    dd($response);
-    //print_r($response);
+    return redirect('/')->with('success', 'You are now signed up for our newsleter!');
 });
