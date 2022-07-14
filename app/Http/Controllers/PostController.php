@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-
 class PostController extends Controller
 {
     public function index()
@@ -21,6 +20,11 @@ class PostController extends Controller
         return view('posts.show', [
             'post' =>  $post
         ]);
+    }
+
+    public function create()
+    {
+        return view ('posts.create');
     }
 
     // index, show, store, edit, update, destroy // 7 RESTFULL ACTIPN
