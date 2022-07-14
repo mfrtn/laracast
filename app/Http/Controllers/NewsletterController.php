@@ -16,7 +16,7 @@ class NewsletterController extends Controller
             $newsletter->subscribe(request('email'));
         } catch (\Exception $e) {
             throw ValidationException::withMessages([
-                'email' => 'email not accepted'
+                'email' => 'This email could not be added to our newsletter list.'
             ]);
         }
 
