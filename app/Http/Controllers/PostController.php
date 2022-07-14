@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
 class PostController extends Controller
 {
     public function index()
@@ -27,5 +29,21 @@ class PostController extends Controller
         return view ('posts.create');
     }
 
+    public function store()
+    {
+        $attributes = request()->validate([
+            'title' => 'required|min:3|max:255',
+            'slug' => ['required', Rule::unique('posts', 'slug')],
+            'excerpt' => 'required',
+            'body' => 'required',
+            'category_id' =>['required', Rule::exists('categories', 'id')]
+        ]);
+
+        $attributes['user_id'] = auth()->id();
+
+        Post::create($attributes);
+
+        return redirect('/')->with('success', 'New Post Created Successfully');
+    }
     // index, show, store, edit, update, destroy // 7 RESTFULL ACTIPN
 }
