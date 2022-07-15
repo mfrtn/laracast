@@ -24,30 +24,4 @@ class PostController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        return view ('posts.create');
-    }
-
-    public function store()
-    {
-        $attributes = request()->validate([
-            'title' => 'required|min:3|max:255',
-            'thumbnail' => 'required|image',
-            'slug' => ['required', Rule::unique('posts', 'slug')],
-            'excerpt' => 'required',
-            'body' => 'required',
-            'category_id' =>['required', Rule::exists('categories', 'id')]
-        ]);
-
-        $attributes['user_id'] = auth()->id();
-        //ddd($attributes);
-        
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-        // ddd($attributes);
-        Post::create($attributes);
-
-        return redirect('/')->with('success', 'New Post Created Successfully');
-    }
-    // index, show, store, edit, update, destroy // 7 RESTFULL ACTION
 }

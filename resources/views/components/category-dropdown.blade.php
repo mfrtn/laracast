@@ -21,7 +21,7 @@
 </x-dropdown>
 
 {{-- My Solution --}}
-    {{-- <x-dropdown-item href="/?{{ http_build_query(request()->except('category', 'page')) }}" :active='request()->category == null'>All
+{{-- <x-dropdown-item href="/?{{ http_build_query(request()->except('category', 'page')) }}" :active='request()->category == null'>All
     </x-dropdown-item>
     @foreach ($categories as $category)
         <x-dropdown-item
