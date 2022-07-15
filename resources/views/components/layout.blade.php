@@ -42,12 +42,25 @@
                             <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</button>
                         </x-slot>
 
-                        <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">
-                            All Posts
-                        </x-dropwdown-item>
-                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">
-                            New Post
-                        </x-dropwdown-item>
+                        {{-- @can('admin')
+                            <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">
+                                All Posts
+                            </x-dropwdown-item>
+                            <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">
+                                New Post
+                            </x-dropwdown-item>
+                        @endcan --}}
+
+                        {{-- Create Custom Blade --}}
+                        @admin
+                            <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">
+                                All Posts
+                            </x-dropwdown-item>
+                            <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">
+                                New Post
+                            </x-dropwdown-item>
+                        @endadmin
+
                         <x-dropdown-item href="#" x-data={}
                             @click.prevent="document.querySelector('#logout-form').submit()">
                             Log Out
