@@ -42,6 +42,9 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="pt-5">
+                        {{ $posts->onEachSide(1)->links() }}
+                    </div>
                 </div>
             </div>
         </div>
